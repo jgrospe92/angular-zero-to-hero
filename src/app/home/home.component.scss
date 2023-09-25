@@ -1,0 +1,8 @@
+.app_home__layout {
+    background: black;
+    color: white;
+
+    & img {
+        object-fit: cover;
+    }
+}
