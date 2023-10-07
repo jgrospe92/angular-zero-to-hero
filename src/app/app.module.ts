@@ -6,17 +6,23 @@ import { HomeComponent } from './home/home.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImageListingComponent } from './feature/image-listing/image-listing.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { AppRoutingModule } from './app-routing/app-routing.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ImageListingComponent
+    ImageListingComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
