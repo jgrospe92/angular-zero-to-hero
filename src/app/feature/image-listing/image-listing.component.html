@@ -41,11 +41,11 @@
                         [style.margin.px] = "imageMargin" alt="image.name">
                     </td>
                     <td>
-                        {{image.name | lowercase}}
+                        {{image.name}}
                     </td>
-                    <td>{{image.code}}</td>
+                    <td>{{image.code | uppercase | convertToSpaces:'-'}}</td>
                     <td>{{image.description}}</td>
-                    <td>{{image.price}}</td>
+                    <td>{{image.price | currency: 'CAD':'symbol':'1.2-2'}}</td>
                     <td>{{image.artist}}</td>
                     <td>{{image.starRating}}</td>
                 </tr>

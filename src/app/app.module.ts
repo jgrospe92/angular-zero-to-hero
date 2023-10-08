@@ -12,6 +12,7 @@ import { ImageListingComponent } from './feature/image-listing/image-listing.com
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { StarComponent } from './shared/star/star/star.component';
+import { ConvertToSpacesPipe } from './shared/pipes/convert-to-spaces.pipe';
 
 
 
@@ -21,7 +22,8 @@ import { StarComponent } from './shared/star/star/star.component';
     HomeComponent,
     ImageListingComponent,
     PageNotFoundComponent,
-    StarComponent
+    StarComponent,
+    ConvertToSpacesPipe
   ],
   imports: [
     BrowserModule,
