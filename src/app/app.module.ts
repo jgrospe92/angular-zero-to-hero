@@ -11,6 +11,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ImageListingComponent } from './feature/image-listing/image-listing.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
+import { StarComponent } from './shared/star/star/star.component';
 
 
 
@@ -19,7 +20,8 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
     AppComponent,
     HomeComponent,
     ImageListingComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    StarComponent
   ],
   imports: [
     BrowserModule,

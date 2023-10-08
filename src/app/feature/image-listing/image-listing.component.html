@@ -33,7 +33,7 @@
             </thead>
             <tbody>
                 <tr *ngFor="let image of filteredImages">
-                    <td class="app_image__layout"> 
+                    <td [ngClass]="{'app_image__layout' : showImage}"> 
                         <img *ngIf="showImage" 
                         [src]="image.imagePath"
                         [title]="image.name"
@@ -41,9 +41,9 @@
                         [style.margin.px] = "imageMargin" alt="image.name">
                     </td>
                     <td>
-                        {{image.name}}
+                        {{image.name | lowercase}}
                     </td>
-                    <td>{{image.id}}</td>
+                    <td>{{image.code}}</td>
                     <td>{{image.description}}</td>
                     <td>{{image.price}}</td>
                     <td>{{image.artist}}</td>

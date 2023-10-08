@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "code": "IM-234",
         "name": "Cocoa Butter",
         "imagePath": "assets/images/image1.jpg",
         "description": "Makes your skin smoother and brighter",
@@ -10,6 +11,7 @@
     },
     {
         "id": 2,
+        "code": "IM-111",
         "name": "Moisturizer",
         "imagePath": "assets/images/image2.jpg",
         "description": "Gives your skin a glow",
@@ -19,6 +21,7 @@
     },
     {
         "id": 3,
+        "code": "IM-210",
         "name": "Lip balm",
         "imagePath": "assets/images/image3.jpg",
         "description": "Smooth Lips",
