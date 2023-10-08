@@ -11,7 +11,49 @@
               </div>
         </div>
     </div>
-    <div class="row">
-        
+    <div class="row" *ngIf="listFilter">
+        <div class="col-md-6">
+            <h4>Filtered By: {{listFilter}}</h4>
+        </div>
     </div>
+    <div class="table-responsive">
+        <table class="table" *ngIf="images.length">
+            <thead>
+                <tr>
+                    <th>
+                        <button class="btn btn-primary" (click)="toggleImage()">{{showImage ? 'Hide' : 'Show'}} image </button>
+                    </th>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Artist</th>
+                    <th>Image Rating</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let image of filteredImages">
+                    <td class="app_image__layout"> 
+                        <img *ngIf="showImage" 
+                        [src]="image.imagePath"
+                        [title]="image.name"
+                        [style.width.px] = "imageWidth"
+                        [style.margin.px] = "imageMargin" alt="image.name">
+                    </td>
+                    <td>
+                        {{image.name}}
+                    </td>
+                    <td>{{image.id}}</td>
+                    <td>{{image.description}}</td>
+                    <td>{{image.price}}</td>
+                    <td>{{image.artist}}</td>
+                    <td>{{image.starRating}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
 </div>

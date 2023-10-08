@@ -11,7 +11,7 @@ import { ImageService } from './image.service';
 export class ImageListingComponent implements OnInit, OnDestroy {
 
   pageTitle: string = 'Image List';
-  imageWidth: number = 50;
+  imageWidth: number = 100;
   imageMargin: number = 2;
   showImage:boolean = false;
   errorMessage = '';
@@ -25,7 +25,7 @@ export class ImageListingComponent implements OnInit, OnDestroy {
     this._listFilter = value;
   }
 
-  filteredProducts: IImage[] = [];
+  filteredImages: IImage[] = [];
   images: IImage[] = [];
 
   constructor(private imageService: ImageService){}
@@ -34,7 +34,7 @@ export class ImageListingComponent implements OnInit, OnDestroy {
     this.sub = this.imageService.getImages().subscribe({
       next: images => {
         this.images = images;
-        this.filteredProducts = this.images;
+        this.filteredImages = this.images;
       },
       error: err => this.errorMessage = err
     })

@@ -4,7 +4,7 @@ export interface IImage {
     imagePath: string
     description: string
     price: number
-    starRating: number
     artist: string
+    starRating: number
 
 }

@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "name": "Cocoa Butter",
+        "imagePath": "assets/images/image1.jpg",
+        "description": "Makes your skin smoother and brighter",
+        "price": 40.99,
+        "artist": "Kala",
+        "starRating": 2
+    },
+    {
+        "id": 2,
+        "name": "Moisturizer",
+        "imagePath": "assets/images/image2.jpg",
+        "description": "Gives your skin a glow",
+        "price": 69.99,
+        "artist": "Kala",
+        "starRating": 5
+    },
+    {
+        "id": 3,
+        "name": "Lip balm",
+        "imagePath": "assets/images/image3.jpg",
+        "description": "Smooth Lips",
+        "price": 17.50,
+        "artist": "Kala",
+        "starRating": 3
+    }
+]
