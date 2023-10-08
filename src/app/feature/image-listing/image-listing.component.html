@@ -32,6 +32,11 @@
                 </tr>
             </thead>
             <tbody>
+                <ng-template [ngIf]="filteredImages.length == 0">
+                    <div class="alert alert-danger m-0" role="alert">
+                      Image not found!
+                      </div>
+                </ng-template>
                 <tr *ngFor="let image of filteredImages">
                     <td [ngClass]="{'app_image__layout' : showImage}"> 
                         <img *ngIf="showImage" 

@@ -23,6 +23,7 @@ export class ImageListingComponent implements OnInit, OnDestroy {
   }
   set listFilter(value: string) {
     this._listFilter = value;
+    this.filteredImages = this.performFilter(value);
   }
 
   filteredImages: IImage[] = [];
@@ -43,7 +44,6 @@ export class ImageListingComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
- 
 
   performFilter(filterBy: string): IImage[] {
     filterBy = filterBy.toLocaleLowerCase();
