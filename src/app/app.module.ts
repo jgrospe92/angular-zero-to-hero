@@ -13,6 +13,7 @@ import { AppRoutingModule } from './app-routing/app-routing.module';
 import { StarComponent } from './shared/star/star/star.component';
 import { ConvertToSpacesPipe } from './shared/pipes/convert-to-spaces.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ImageDetailComponent } from './feature/image-listing/image-detail.component';
 
 
 
@@ -23,7 +24,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ImageListingComponent,
     PageNotFoundComponent,
     StarComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    ImageDetailComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -46,7 +46,9 @@
                         [style.margin.px] = "imageMargin" alt="image.name">
                     </td>
                     <td>
-                        {{image.name}}
+                        <a [routerLink]="['/images', image.id]">
+                            {{image.name}}
+                        </a>
                     </td>
                     <td>{{image.code | uppercase | convertToSpaces:'-'}}</td>
                     <td>{{image.description}}</td>

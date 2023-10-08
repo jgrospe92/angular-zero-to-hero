@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, tap, throwError } from 'rxjs';
+import { Observable, catchError, map, tap, throwError } from 'rxjs';
 import { IImage } from 'src/app/models/image.model';
 
 @Injectable({
@@ -11,6 +11,13 @@ export class ImageService {
   private imageUrl = 'api/data/mock_data.json';
 
   constructor(private http: HttpClient) { }
+
+
+  getImage(id: number): Observable<IImage | undefined> {
+    return this.getImages().pipe(
+      map((images: IImage[]) => images.find(image => image.id === id))
+    );
+  }
 
   getImages(): Observable<IImage[]> {
     return this.http.get<IImage[]>(this.imageUrl)
