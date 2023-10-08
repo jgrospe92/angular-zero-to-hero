@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  title: string = "Photo Inventory"
+  pageTitle: string = "Photo Inventory"
   githubLink:string = "https://github.com/jgrospe92"
 
 }
