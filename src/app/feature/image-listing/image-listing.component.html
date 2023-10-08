@@ -47,7 +47,10 @@
                     <td>{{image.description}}</td>
                     <td>{{image.price | currency: 'CAD':'symbol':'1.2-2'}}</td>
                     <td>{{image.artist}}</td>
-                    <td>{{image.starRating}}</td>
+                    <td>
+                        <app-star [rating]="image.starRating"
+                            (ratingClicked)="onRatingClicked($event)"></app-star>
+                    </td>
                 </tr>
             </tbody>
         </table>
