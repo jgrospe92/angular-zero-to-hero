@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { IImage } from 'src/app/models/image.model';
-import { ImageService } from './image.service';
+import { ImageService } from './image.service';;
 
 @Component({
   selector: 'app-image-listing',
   templateUrl: './image-listing.component.html',
-  styleUrls: ['./image-listing.component.scss']
+  styleUrls: ['./image-listing.component.scss'],
 })
 export class ImageListingComponent implements OnInit, OnDestroy {
 

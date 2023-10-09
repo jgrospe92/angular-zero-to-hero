@@ -37,28 +37,28 @@
                       Image not found!
                       </div>
                 </ng-template>
-                <tr *ngFor="let image of filteredImages">
-                    <td [ngClass]="{'app_image__layout' : showImage}"> 
-                        <img *ngIf="showImage" 
-                        [src]="image.imagePath"
-                        [title]="image.name"
-                        [style.width.px] = "imageWidth"
-                        [style.margin.px] = "imageMargin" alt="image.name">
-                    </td>
-                    <td>
-                        <a [routerLink]="['/images', image.id]">
-                            {{image.name}}
-                        </a>
-                    </td>
-                    <td>{{image.code | uppercase | convertToSpaces:'-'}}</td>
-                    <td>{{image.description}}</td>
-                    <td>{{image.price | currency: 'CAD':'symbol':'1.2-2'}}</td>
-                    <td>{{image.artist}}</td>
-                    <td>
-                        <app-star [rating]="image.starRating"
-                            (ratingClicked)="onRatingClicked($event)"></app-star>
-                    </td>
-                </tr>
+                    <tr *ngFor="let image of filteredImages">
+                        <td [ngClass]="{'app_image__layout' : showImage}">
+                            <img *ngIf="showImage"
+                            [src]="image.imagePath"
+                            [title]="image.name"
+                            [style.width.px] = "imageWidth"
+                            [style.margin.px] = "imageMargin" alt="image.name">
+                        </td>
+                        <td>
+                            <a [routerLink]="['/images', image.id]">
+                                {{image.name}}
+                            </a>
+                        </td>
+                        <td>{{image.code | uppercase | convertToSpaces:'-'}}</td>
+                        <td>{{image.description}}</td>
+                        <td>{{image.price | currency: 'CAD':'symbol':'1.2-2'}}</td>
+                        <td>{{image.artist}}</td>
+                        <td>
+                            <app-star [rating]="image.starRating"
+                                (ratingClicked)="onRatingClicked($event)"></app-star>
+                        </td>
+                    </tr>
             </tbody>
         </table>
     </div>
