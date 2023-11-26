@@ -3,7 +3,8 @@ import { ProductCategory } from '../product-categories/product-category';
 
 import { Product } from './product';
 import { ProductService } from './product.service';
-import { EMPTY, Observable, catchError } from 'rxjs';
+import { BehaviorSubject, EMPTY, Observable, Subject, catchError, combineLatest, map, startWith } from 'rxjs';
+import { ProductCategoryService } from '../product-categories/product-category.service';
 
 @Component({
   templateUrl: './product-list.component.html',
@@ -13,23 +14,37 @@ import { EMPTY, Observable, catchError } from 'rxjs';
 export class ProductListComponent  {
   pageTitle = 'Product List';
   errorMessage = '';
-  categories: ProductCategory[] = [];
 
-  products$ = this.productService.products$
+  private categorySelectedSubject = new BehaviorSubject<number>(0);
+  categorySelectedAction$ = this.categorySelectedSubject.asObservable();
+
+  products$ = combineLatest([
+    this.productService.productsWithCategory$,
+    this.categorySelectedAction$
+  ])
     .pipe(
-      catchError(err => {
-        this.errorMessage = err;
-        return EMPTY
-      })
+      map(([products, selectedCategoryId]) =>
+        products.filter(product => 
+            selectedCategoryId ? product.categoryId === selectedCategoryId : true))
     )
 
-  constructor(private productService: ProductService) { }
+    categories$ = this.productCategoryService.productCategories$
+      .pipe(
+        catchError(err => {
+          this.errorMessage = err;
+          return EMPTY
+        })
+      )
+
+
+
+  constructor(private productService: ProductService, private productCategoryService: ProductCategoryService) { }
 
   onAdd(): void {
     console.log('Not yet implemented');
   }
 
   onSelected(categoryId: string): void {
-    console.log('Not yet implemented');
+    this.categorySelectedSubject.next(+categoryId)
   }
 }
